@@ -9,10 +9,13 @@ import Root from './Root.jsx';
 import Home from './Home.jsx';
 import ListedBook from './components/ListedBook.jsx';
 import PageToRead from './components/PageToRead.jsx';
+import BookDetail from './components/BookDetail.jsx';
+import ErrorElement from './components/ErrorElement.jsx';
 const router = createBrowserRouter([
   { 
     path:'/',
     element: <Root></Root>,
+    errorElement: <ErrorElement></ErrorElement>,
     children:[
       {
         path:'/',
@@ -28,7 +31,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/bookDetail',
-        element:
+        element:<BookDetail></BookDetail>
 
       }
     ]
