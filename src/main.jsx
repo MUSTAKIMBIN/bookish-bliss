@@ -25,6 +25,11 @@ const router = createBrowserRouter([
       {
         path:'/pageToRead',
         element:<PageToRead></PageToRead>
+      },
+      {
+        path: '/bookDetail',
+        element:
+
       }
     ]
     
