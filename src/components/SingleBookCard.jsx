@@ -3,10 +3,10 @@ import { CiStar } from "react-icons/ci";
 import { Link } from "react-router-dom";
 
 const SingleBookCard = ({ book }) => {
-  const { image, bookName, tags, author, category, rating } = book;
+  const { image, bookName,bookId, tags, author, category, rating } = book;
   return (
     <div>
-      <Link to='/bookDetail'>
+      <Link to={`/bookDetail/${bookId}`}>
       <div className="border rounded-xl p-4 shadow-sm shadow-[#49108bb9] md:h-[480px]">
         <div className="bg-[#F3F8FF] p-2 rounded-lg">
           <img className="h-52 mx-auto rounded-sm" src={image} alt="" />
