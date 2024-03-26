@@ -5,9 +5,11 @@ const Header = () => {
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/listedBook'>Listed Books</NavLink></li>
         <li><NavLink to='/pageToRead'>Pages to Read</NavLink></li>
+        <li><NavLink to='/aboutUs'>About Us</NavLink></li>
+        <li><NavLink to='/offer'>Offer</NavLink></li>
     </>
   return (
-    <div className="navbar bg-base-100 w-4/5 mx-auto">
+    <div className="navbar bg-base-100 w-5/6 mx-auto">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -40,7 +42,7 @@ const Header = () => {
         {links}
         </ul>
       </div>
-      <div className="navbar-end md:space-x-4 hidden md:block">
+      <div className="navbar-end md:space-x-3 hidden md:block">
         <a className="btn bg-[#E26EE5] text-white hover:bg-white hover:text-[#E26EE5] border hover:border-[#E26EE5]">Sing In</a>
         <a className="btn bg-[#7E30E1] text-white hover:bg-white hover:text-[#7E30E1] border hover:border-[#7E30E1]">Sing Up</a>
       </div>

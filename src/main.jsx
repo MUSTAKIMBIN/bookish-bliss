@@ -11,6 +11,8 @@ import ListedBook from './components/ListedBook.jsx';
 import PageToRead from './components/PageToRead.jsx';
 import BookDetail from './components/BookDetail.jsx';
 import ErrorElement from './components/ErrorElement.jsx';
+import AboutUs from './components/AboutUs.jsx';
+import Offer from './components/Offer.jsx';
 const router = createBrowserRouter([
   { 
     path:'/',
@@ -28,6 +30,14 @@ const router = createBrowserRouter([
       {
         path:'/pageToRead',
         element:<PageToRead></PageToRead>
+      },
+      {
+        path:'/aboutUs',
+        element:<AboutUs></AboutUs>
+      },
+      {
+        path:'/offer',
+        element:<Offer></Offer>
       },
       {
         path: '/bookDetail/:bookId',
