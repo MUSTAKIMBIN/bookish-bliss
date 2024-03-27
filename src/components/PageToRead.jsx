@@ -1,23 +1,25 @@
+import { useEffect, useState } from 'react';
 import { ResponsiveContainer,Bar,BarChart, XAxis, YAxis} from 'recharts'
+import { getDataFromLocalStorage } from './localStorage';
 
-const data = [
-  {
-    name: "python",
-    student: 35
-  },
-  {
-    name: "php",
-    student: 55
-  },
-  {
-    name: "java",
-    student: 20
-  },
-  {
-    name: "Go",
-    student: 22
-  }
-]
+// const data = [
+//   {
+//     name: "python",
+//     student: 35
+//   },
+//   {
+//     name: "php",
+//     student: 55
+//   },
+//   {
+//     name: "java",
+//     student: 20
+//   },
+//   {
+//     name: "Go",
+//     student: 22
+//   }
+// ]
 
 const getPath = (x, y, width, height) => (
   `M${x},${y + height}
@@ -35,14 +37,28 @@ const TriangleBar = (props) => {
 };
 
 
+
+
 const PageToRead = () => {
+  const [bookData, setBookData]=useState([])
+    useEffect(()=>{
+        const data= getDataFromLocalStorage()
+        setBookData(data)
+    },[])
+ 
+console.log(bookData)
+
+
+
+
+
   return (
     <div className='w-4/5 mx-auto my-10'>
-      <ResponsiveContainer width="90%" aspect={1.5}>
-        <BarChart data={data} width={400} height={400}>
-          <XAxis dataKey="name"></XAxis>
-          <YAxis dataKey="student"></YAxis>
-          <Bar dataKey="student" fill="#8884d8" shape={<TriangleBar />}></Bar>
+      <ResponsiveContainer width="100%" aspect={1.5}>
+        <BarChart data={bookData} width={400} height={400}>
+          <XAxis dataKey="bookName"></XAxis>
+          <YAxis dataKey="totalPages"></YAxis>
+          <Bar dataKey="totalPages" fill="#8884d8" shape={<TriangleBar />}></Bar>
         </BarChart>
       </ResponsiveContainer>
       
