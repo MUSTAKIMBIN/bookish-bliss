@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getDataFromLocalStorage } from "./localStorage";
+import ListedBookCard from "./ListedBookCard";
 
 
 const ReadBooks = () => {
@@ -9,11 +10,11 @@ const ReadBooks = () => {
         const data= getDataFromLocalStorage()
         setReadBooks(data)
     },[])
-
     return (
         <div>
             {
-                readBooks.map(book => <h1 className="text-2xl font-bold" key={book.bookId}>{book.bookName}</h1>)
+                readBooks?.map(book => <ListedBookCard key={book.bookId}
+                    book={book}></ListedBookCard>)
             }
         </div>
     );

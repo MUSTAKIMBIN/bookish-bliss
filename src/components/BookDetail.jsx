@@ -1,7 +1,7 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { saveDataToLocalStorage } from "./localStorage";
+import { saveDataToLocalStorage, saveWishBookToLocalStorage } from "./localStorage";
 
 const BookDetail = () => {
   const books = useLoaderData();
@@ -16,6 +16,7 @@ const BookDetail = () => {
     toast.success("Book added to read");
   };
   const handleWishBook = () => {
+    saveWishBookToLocalStorage(singleBook)
     toast.warn("Book added to wishlst");
   };
   return (
