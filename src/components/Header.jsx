@@ -1,13 +1,90 @@
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
-    const links= <>
-        <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/listedBook'>Listed Books</NavLink></li>
-        <li><NavLink to='/pageToRead'>Pages to Read</NavLink></li>
-        <li><NavLink to='/aboutUs'>About Us</NavLink></li>
-        <li><NavLink to='/offer'>Offer</NavLink></li>
+  const links = (
+    <>
+      <li>
+        <NavLink
+          to="/"
+          style={({ isActive }) => {
+            return {
+              fontWeight: isActive ? "bold" : "",
+              color: isActive ? "#7E30E1" : "black",
+              backgroundColor: isActive ? "white" : "",
+              border: isActive ? "2px solid" : "",
+              borderColor: isActive ? "#7E30E1" : "",
+            };
+          }}
+        >
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/listedBook"
+          style={({ isActive }) => {
+            return {
+              fontWeight: isActive ? "bold" : "",
+              color: isActive ? "#7E30E1" : "black",
+              backgroundColor: isActive ? "white" : "",
+              border: isActive ? "2px solid" : "",
+              borderColor: isActive ? "#7E30E1" : "",
+            };
+          }}
+        >
+          Listed Books
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/pageToRead"
+          style={({ isActive }) => {
+            return {
+              fontWeight: isActive ? "bold" : "",
+              color: isActive ? "#7E30E1" : "black",
+              backgroundColor: isActive ? "white" : "",
+              border: isActive ? "2px solid" : "",
+              borderColor: isActive ? "#7E30E1" : "",
+            };
+          }}
+        >
+          Pages to Read
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/aboutUs"
+          style={({ isActive }) => {
+            return {
+              fontWeight: isActive ? "bold" : "",
+              color: isActive ? "#7E30E1" : "black",
+              backgroundColor: isActive ? "white" : "",
+              border: isActive ? "2px solid" : "",
+              borderColor: isActive ? "#7E30E1" : "",
+            };
+          }}
+        >
+          About Us
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/offer"
+          style={({ isActive }) => {
+            return {
+              fontWeight: isActive ? "bold" : "",
+              color: isActive ? "#7E30E1" : "black",
+              backgroundColor: isActive ? "white" : "",
+              border: isActive ? "2px solid" : "",
+              borderColor: isActive ? "#7E30E1" : "",
+            };
+          }}
+        >
+          Offer
+        </NavLink>
+      </li>
     </>
+  );
   return (
     <div className="navbar bg-base-100 w-5/6 mx-auto">
       <div className="navbar-start">
@@ -32,19 +109,23 @@ const Header = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
-           {links}
+            {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-2xl gap-0 text-[#E26EE5] font-semibold">Bookish<span className="text-[#7E30E1]">Bliss</span></a>
+        <a className="btn btn-ghost text-2xl gap-0 text-[#E26EE5] font-semibold">
+          Bookish<span className="text-[#7E30E1]">Bliss</span>
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-        {links}
-        </ul>
+        <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end md:space-x-3 hidden md:block">
-        <a className="btn bg-[#E26EE5] text-white hover:bg-white hover:text-[#E26EE5] border hover:border-[#E26EE5]">Sing In</a>
-        <a className="btn bg-[#7E30E1] text-white hover:bg-white hover:text-[#7E30E1] border hover:border-[#7E30E1]">Sing Up</a>
+        <a className="btn bg-[#E26EE5] text-white hover:bg-white hover:text-[#E26EE5] border hover:border-[#E26EE5]">
+          Sing In
+        </a>
+        <a className="btn bg-[#7E30E1] text-white hover:bg-white hover:text-[#7E30E1] border hover:border-[#7E30E1]">
+          Sing Up
+        </a>
       </div>
     </div>
   );
