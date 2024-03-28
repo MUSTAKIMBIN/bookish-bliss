@@ -38,7 +38,7 @@ const ListedBookCard = ({ book }) => {
         </div>
         <div className="flex justify-between py-5 items-center">
             <p className="py-1 px-2 md:py-2 md:px-4 rounded-2xl bg-lime-200 font-semibold text-sm">Category : {book.category}</p>
-            <p className="py-1 px-2 md:py-2 md:px-4 rounded-2xl bg-purple-200 font-semibold text-sm">Category : {book.rating}</p>
+            <p className="py-1 px-2 md:py-2 md:px-4 rounded-2xl bg-purple-200 font-semibold text-sm">Rating : {book.rating}</p>
             <Link to={`/bookDetail/${book.bookId}`}>
                 <button className="py-2 px-4 border border-pink-400 rounded-2xl bg-pink-200 font-semibold text-sm">View Details</button>
             </Link>
