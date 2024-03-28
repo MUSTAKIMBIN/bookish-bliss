@@ -1,7 +1,11 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { saveDataToLocalStorage, saveWishBookToLocalStorage } from "./localStorage";
+import {
+  getDataFromLocalStorage,
+  saveDataToLocalStorage,
+  saveWishBookToLocalStorage,
+} from "./localStorage";
 
 const BookDetail = () => {
   const books = useLoaderData();
@@ -10,13 +14,20 @@ const BookDetail = () => {
   const singleBook = books.find((book) => book.bookId === intBookId);
 
   const handleReadBook = () => {
-    saveDataToLocalStorage(singleBook)
-
+    saveDataToLocalStorage(singleBook);
+    const checkedData = getDataFromLocalStorage(singleBook);
+    const isExsist = checkedData.find(data => data.bookId === singleBook.bookId)
+    // console.log(isExsist)
+    if(isExsist){
+      toast.success("Book added to read");
+    }else{
+      toast.warn("This book is allready added ")
+    }
+   
     document.getElementById("wishBtn").disabled = true;
-    toast.success("Book added to read");
   };
   const handleWishBook = () => {
-    saveWishBookToLocalStorage(singleBook)
+    saveWishBookToLocalStorage(singleBook);
     toast.warn("Book added to wishlst");
   };
   return (
